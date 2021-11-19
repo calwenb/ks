@@ -1,0 +1,114 @@
+header {
+  position: relative;
+}
+nav {
+  overflow: hidden;
+}
+.seckill {
+  position: absolute;
+  width: 83px;
+  height: 33px;
+  top: 39px;
+  left: 184px;
+  text-align: center;
+  line-height: 33px;
+  padding-left: 10px;
+  border-left: 1px solid #b1191a;
+}
+.sk_list {
+  float: left;
+}
+.sk_list ul li {
+  float: left;
+}
+.sk_list ul li a {
+  display: block;
+  height: 44px;
+  line-height: 44px;
+  padding-right: 54px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+}
+.sk_con {
+  float: left;
+}
+.sk_con ul li {
+  float: left;
+}
+.sk_con ul li a {
+  display: block;
+  height: 44px;
+  line-height: 44px;
+  padding-right: 45px;
+  font-size: 14px;
+}
+.sk_con ul li:last-child a::after {
+  content: "\e91e";
+  font-family: "icomoon";
+  padding-left: 5px;
+}
+.com_list-bd {
+  overflow: hidden;
+  margin: 24px 0 300px 0;
+  width: 1300px;
+}
+.com_list-bd ul li {
+  float: left;
+  overflow: hidden;
+  width: 291px;
+  height: 460px;
+  margin-right: 10px;
+  border: 1px solid transparent;
+}
+.com_list-bd ul li:hover {
+  border: 1px solid #e60012;
+}
+.com_list-bd ul li a img {
+  display: block;
+  margin: 0 auto;
+}
+.com_list-bd ul li h4 {
+  font-size: 12px;
+  font-weight: 400;
+  padding-left: 12px;
+  padding-top: 5px;
+}
+.com_list-bd ul li .price {
+  font-size: 22px;
+  color: #e60012;
+  padding-left: 12px;
+  padding-top: 20px;
+}
+.com_list-bd ul li .price em {
+  font-size: 14px;
+  color: #a4a4a4;
+  text-decoration: line-through;
+}
+.com_list-bd ul li .sold {
+  position: relative;
+  padding: 12px;
+}
+.com_list-bd ul li .sold .cylinder {
+  display: inline-block;
+  width: 116px;
+  height: 12px;
+  border: 1px solid #e60012;
+  border-radius: 10px;
+  margin: 0 12px;
+  background-color: #e60012;
+}
+.com_list-bd ul li .sold i {
+  color: #e12228;
+}
+.com_list-bd ul li .buy {
+  display: block;
+  width: 290px;
+  height: 50px;
+  margin-top: 5px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #b1191a;
+}

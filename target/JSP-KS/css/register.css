@@ -1,0 +1,81 @@
+header {
+  height: 84px;
+  line-height: 84px;
+  border-bottom: 2px solid #b1191a;
+}
+.registerarea {
+  height: 523px;
+  border: 1px solid #dfdfdf;
+  margin-top: 20px;
+}
+.registerarea h3 {
+  height: 42px;
+  line-height: 42px;
+  padding-left: 10px;
+  font-weight: 400;
+  background-color: #ececec;
+  border-bottom: 1px solid #dfdfdf;
+}
+.registerarea h3 .login {
+  float: right;
+  padding-right: 10px;
+}
+.registerarea .reg-form {
+  width: 600px;
+  margin: 50px auto 0;
+  /* background-color: pink;s */
+}
+.reg-form ul li label {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+.reg-form ul li input {
+  width: 238px;
+  height: 33px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+.reg-form ul .safe {
+  margin-top: -12px;
+  margin-bottom: 18px;
+  padding-left: 160px;
+  color: #c4c4c4;
+}
+.reg-form ul .safe em {
+  padding: 0 12px;
+  color: #fff;
+}
+.safe .weak {
+  background-color: #de1111;
+}
+.safe .middle {
+  background-color: #40b83f;
+}
+.safe .strong {
+  background-color: #f79100;
+}
+.reg-form ul .agree input {
+  width: 14px;
+  height: 12px;
+  margin: 24px 10px 60px 90px;
+  font-size: 14px;
+  color: #fff;
+}
+.reg-form ul .agree a {
+  padding-left: 5px;
+  font-size: 12px;
+  color: #1ba1e6;
+}
+.reg-form ul li .btn {
+  width: 200px;
+  height: 34px;
+  margin: 10px 0 0 100px;
+  color: #fff;
+  background-color: #c81623;
+}
+
+footer {
+  height: 100px;
+  background-color: #fff;
+}

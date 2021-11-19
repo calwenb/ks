@@ -1,0 +1,55 @@
+.dialog-admin {
+  width: 400px;
+  height: 400px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  border: 5px solid #ccc;
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  z-index: 999;
+  display: none;
+}
+
+.dialog-admin .dialog-admin-close {
+  width: 30px;
+  height: 30px;
+  background: #ccc;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.dialog-admin .dialog-admin-close:hover {
+  background: #d1392a;
+  color: #fff;
+}
+
+.dialog-admin-body {
+  width: 100%;
+}
+
+.dialog-admin-body p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+  margin: 10px auto;
+}
+
+.dialog-admin-body a {
+  display: block;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  background: #d1392a;
+  margin: 10px auto;
+}
