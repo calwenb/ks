@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-ear" name="JSP-KS:ear exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/JSP_KS_ear_exploded</output-path>
-    <root id="root">
-      <element id="javaee-facet-resources" facet="JSP-KS/javaeeApplication/javaEEApplication" />
-    </root>
-  </artifact>
-</component>
