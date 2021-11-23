@@ -3,7 +3,10 @@ package wen.dao;
 import wen.pojo.Order;
 import wen.pojo.OrderItem;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +52,6 @@ public class OrderDao {
         PreparedStatement pst = con.prepareStatement(sql);
         pst.setString(1, queryText);
         pst.setInt(2, start);
-        System.out.println(pst);
         ResultSet rs = pst.executeQuery();
         while (rs.next()) {
             List<OrderItem> orderItems = OrderItemDao.queryAllOrderItemById(con, rs.getInt("id"));

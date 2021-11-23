@@ -23,7 +23,7 @@ public class RegisterController extends HttpServlet {
         String userName = request.getParameter("userName");
         String loginName = request.getParameter("loginName");
         String passWord = request.getParameter("password");
-        int phoneNumber = Integer.parseInt(request.getParameter("phoneNumber"));
+        String phoneNumber = request.getParameter("phoneNumber");
         String email = request.getParameter("email");
         User user = new User(-1, userName, loginName, passWord, 2, phoneNumber, email);
         try {

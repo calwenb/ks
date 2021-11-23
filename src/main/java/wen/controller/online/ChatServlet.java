@@ -1,15 +1,15 @@
-package wen.servlet;
+package wen.controller.online;
 
-import java.io.IOException;
-import java.util.Random;
-import java.util.Vector;
-import java.io.*;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Random;
+import java.util.Vector;
 
 /**
  * Servlet implementation class ChatServlet

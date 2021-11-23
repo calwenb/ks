@@ -30,7 +30,7 @@ public class SenMailController extends HttpServlet {
             e.printStackTrace();
         }
         try {
-            OrderService.sendMail(user.getemail());
+            OrderService.sendMail(user.getEmail());
         } catch (MessagingException e) {
             e.printStackTrace();
         } catch (GeneralSecurityException e) {

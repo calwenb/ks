@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
 @WebServlet("/myOrderController")
 public class myOrderController extends HttpServlet {
@@ -21,7 +20,7 @@ public class myOrderController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User loginUser = (User) session.getAttribute("LOGIN_USER");
-        if (loginUser==null){
+        if (loginUser == null) {
             response.sendRedirect("login.jsp");
         }
         try {
@@ -44,7 +43,6 @@ public class myOrderController extends HttpServlet {
             if (queryText != null) {
                 String isLik = request.getParameter("isLik");
                 if ("模糊查询".equals(isLik)) {
-                    //System.out.println(isLik);
                     orders = OrderService.queryLike(queryText, true, preNum);
                 } else {
                     orders = OrderService.queryLike(queryText, false, preNum);
@@ -53,10 +51,9 @@ public class myOrderController extends HttpServlet {
                 orders = OrderService.queryAllOrders(preNum);
             }
             String loginName = loginUser.getLoginName();
-            orders.forEach(System.out::print);
-            ArrayList<Order> myOrders = new ArrayList<>();
+            LinkedList<Order> myOrders = new LinkedList<>();
             for (Order order : orders) {
-                if (order.getLogin_name().equals(loginName)){
+                if (order.getLogin_name().equals(loginName)) {
                     myOrders.add(order);
                 }
             }

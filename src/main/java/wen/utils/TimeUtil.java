@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * 单利模式 懒汉式
+ * 单利模式
  */
 public class TimeUtil {
 

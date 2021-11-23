@@ -11,13 +11,13 @@ public class User {
     private String loginName;
     private String passWord;
     private int userType;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
 
     public User() {
     }
 
-    public User(int id, String userName, String loginName, String passWord, int userType, int phoneNumber, String email) {
+    public User(int id, String userName, String loginName, String passWord, int userType, String phoneNumber, String email) {
         this.id = id;
         this.userName = userName;
         this.loginName = loginName;
@@ -67,19 +67,19 @@ public class User {
         this.userType = userType;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getemail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setemail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -91,7 +91,7 @@ public class User {
                 ", loginName='" + loginName + '\'' +
                 ", passWord='" + passWord + '\'' +
                 ", userType=" + userType +
-                ", phoneNumber=" + phoneNumber +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }

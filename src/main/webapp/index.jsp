@@ -83,7 +83,7 @@
         </h1>
     </div>
     <div class="search">
-        <input type="search" name="" id="" placeholder="语言开发">
+        <input type="search" name="" id="">
         <button>搜索</button>
     </div>
 

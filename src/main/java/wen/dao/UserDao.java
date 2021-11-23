@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * dao层 userDao
  * whl
  */
-public class UserDao implements BaseDao{
+public class UserDao implements BaseDao {
 
     public static ArrayList<User> queryAllUsers(Connection con) throws SQLException {
         ArrayList<User> users = new ArrayList<>();
@@ -20,7 +20,7 @@ public class UserDao implements BaseDao{
         PreparedStatement pst = con.prepareStatement(sql);
         ResultSet rs = pst.executeQuery();
         while (rs.next()) {
-            users.add(new User(rs.getInt("id"), rs.getString("user_name"), rs.getString("login_name"), rs.getString("pass_word"), rs.getInt("user_type"), rs.getInt("phone_number"), rs.getString("email")));
+            users.add(new User(rs.getInt("id"), rs.getString("user_name"), rs.getString("login_name"), rs.getString("pass_word"), rs.getInt("user_type"), rs.getString("phone_number"), rs.getString("email")));
         }
         return users;
     }
@@ -32,7 +32,7 @@ public class UserDao implements BaseDao{
         pst.setInt(1, id);
         ResultSet rs = pst.executeQuery();
         while (rs.next()) {
-            user = new User(rs.getInt("id"), rs.getString("user_name"), rs.getString("login_name"), rs.getString("pass_word"), rs.getInt("user_type"), rs.getInt("phone_number"), rs.getString("email"));
+            user = new User(rs.getInt("id"), rs.getString("user_name"), rs.getString("login_name"), rs.getString("pass_word"), rs.getInt("user_type"), rs.getString("phone_number"), rs.getString("email"));
         }
         return user;
     }
@@ -44,7 +44,7 @@ public class UserDao implements BaseDao{
         pst.setString(1, loginName);
         ResultSet rs = pst.executeQuery();
         while (rs.next()) {
-            user = new User(rs.getInt("id"), rs.getString("user_name"), rs.getString("login_name"), rs.getString("pass_word"), rs.getInt("user_type"), rs.getInt("phone_number"), rs.getString("email"));
+            user = new User(rs.getInt("id"), rs.getString("user_name"), rs.getString("login_name"), rs.getString("pass_word"), rs.getInt("user_type"), rs.getString("phone_number"), rs.getString("email"));
         }
         return user;
     }
@@ -56,8 +56,8 @@ public class UserDao implements BaseDao{
         pst.setString(2, user.getLoginName());
         pst.setString(3, user.getPassWord());
         pst.setInt(4, user.getUserType());
-        pst.setInt(5, user.getPhoneNumber());
-        pst.setString(6, user.getemail());
+        pst.setString(5, user.getPhoneNumber());
+        pst.setString(6, user.getEmail());
         return pst.executeUpdate();
     }
 
@@ -68,13 +68,11 @@ public class UserDao implements BaseDao{
         pst.setString(2, user.getUserName());
         pst.setString(3, user.getPassWord());
         pst.setInt(4, user.getUserType());
-        pst.setInt(5, user.getPhoneNumber());
-        pst.setString(6, user.getemail());
+        pst.setString(5, user.getPhoneNumber());
+        pst.setString(6, user.getEmail());
         pst.setInt(7, user.getId());
         return pst.executeUpdate();
     }
-
-
 
 
 }

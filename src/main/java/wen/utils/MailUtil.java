@@ -1,7 +1,6 @@
 package wen.utils;
 
 import com.sun.mail.util.MailSSLSocketFactory;
-import org.junit.Test;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -14,7 +13,6 @@ public class MailUtil {
     /*配置基本信息*/
     static String fromAddress = "mr.wen66@qq.com";   /*发件人*/
     static String token = "fabqcqcqcjoecddg";      /*授权码*/
-
     static String mailHost = "smtp.qq.com";        /*邮箱服务器*/
 
     /**

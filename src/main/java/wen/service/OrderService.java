@@ -1,7 +1,6 @@
 package wen.service;
 
 import com.alibaba.fastjson.JSON;
-import com.sun.corba.se.impl.resolver.ORBDefaultInitRefResolverImpl;
 import wen.dao.OrderDao;
 import wen.pojo.Order;
 import wen.utils.JDBCUtil;
@@ -22,7 +21,9 @@ import java.util.Set;
 public class OrderService {
     public static ArrayList<Order> queryAllOrders(int preNum) throws SQLException, ClassNotFoundException {
         Connection con = JDBCUtil.getConnection();
-        return OrderDao.queryAllOrders(con, preNum);
+        ArrayList<Order> orders = OrderDao.queryAllOrders(con, preNum);
+        con.close();
+        return orders;
     }
 
     public static ArrayList<Order> queryLike(String queryText, boolean isLike, int preNum) throws SQLException, ClassNotFoundException {
