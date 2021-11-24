@@ -35,7 +35,8 @@
             <ul>
 
                 <li><label for="password_02">密码：</label><input type="password" name="password" id="password_02"></li>
-                <!-- <li class="agree"><input type="checkbox" name="" id="">同意协议并注册<a href="#">《知果果用户协议》</a></li> -->
+
+                <li class="agree"><input type="checkbox" name="auto_login"/>自动登录</li>
                 <br>
 
                 <li><input type="submit" value="登录" class="btn"></li>
