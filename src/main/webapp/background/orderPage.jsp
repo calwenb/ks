@@ -71,6 +71,7 @@
                                         </c:forEach>
                                     </td>
                                     <td>${order.getLogin_name()}</td>
+
                                     <td>${order.getLinkman()}</td>
                                     <td>地址:${order.getAddress ()}<br>
                                         电话:${order.getPhonenumber()}</td>
