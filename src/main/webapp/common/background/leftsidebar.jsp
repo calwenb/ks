@@ -7,9 +7,8 @@
                 <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">&nbsp;商品管理</span>
             </a>
             <ul class="nav nav-pills nav-stacked" id="collapse_emp">
-                <li role="presentation"><a href="${pageContext.request.contextPath}/OrderQueryController">商品信息</a></li>
-                <li role="presentation"><a href="${pageContext.request.contextPath}/emp/toAddEmp">商品新增</a></li>
-                <li role="presentation"><a href="${pageContext.request.contextPath}/emp/deleteAll">商品清零</a></li>
+                <li role="presentation"><a href="${pageContext.request.contextPath}/queryGoodsServlet">查询商品信息</a></li>
+                <li role="presentation"><a href="${pageContext.request.contextPath}/ground.jsp">商品上架</a></li>
             </ul>
         </li>
     </ul>

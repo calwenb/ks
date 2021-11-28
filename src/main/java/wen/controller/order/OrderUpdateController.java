@@ -18,11 +18,11 @@ public class OrderUpdateController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("orderId"));
         String linkman = request.getParameter("linkman");
         String address = request.getParameter("address");
-        int phonenumber = Integer.parseInt(request.getParameter("phonenumber"));
+        String phonenumber = request.getParameter("phonenumber");
         String remark = request.getParameter("remark");
         int status = Integer.parseInt(request.getParameter("status"));
         try {
-            Order order = OrderService.queryAllOrderById(id);
+            Order order = OrderService.queryOrderById(id);
             order.setLinkman(linkman);
             order.setAddress(address);
             order.setPhonenumber(phonenumber);

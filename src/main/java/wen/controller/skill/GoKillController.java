@@ -19,15 +19,20 @@ public class GoKillController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List SKGoodsIds = SKillService.querySKGoods();
+        List SKGoodses = null;
+        try {
+            SKGoodses = SKillService.querySKGoods();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         Date killTime = KillTimeUtil.getKillTime();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        if (killTime!=null){
+        if (killTime != null) {
             String startTime = format.format(killTime);
             request.setAttribute("SKTime", startTime);
         }
 
-        request.setAttribute("SKGoodsIds", SKGoodsIds);
+        request.setAttribute("SKGoodses", SKGoodses);
         request.getRequestDispatcher("/kill.jsp").forward(request, response);
     }
 

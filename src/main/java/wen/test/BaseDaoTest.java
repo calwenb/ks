@@ -1,7 +1,6 @@
 package wen.test;
 
 import org.junit.Test;
-import wen.pojo.Goods;
 import wen.pojo.Order;
 import wen.pojo.User;
 import wen.utils.JDBCUtil;
@@ -14,14 +13,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 
 public class BaseDaoTest {
     static Connection con;
 
-    {
+    static {
         try {
             try {
                 con = JDBCUtil.getConnection();
@@ -68,7 +69,7 @@ public class BaseDaoTest {
     @Test
     public void update() throws SQLException {
         String sql = "UPDATE `shop`.order  SET status=? WHERE id=?";
-        Order order = new Order(6, "long", "文海龙", "南宁", 1010, 20.00, new Date(123123131), "无", 1);
+        Order order = new Order(6, "long", "文海龙", "南宁", "1010", 20.00, new Date(123123131), "无", 1);
         Object[] setSqls = {"2", order.getId()};
         int i = updateTarget(con, sql, setSqls);
         System.out.println(i);
@@ -78,7 +79,7 @@ public class BaseDaoTest {
     public void add() throws SQLException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException {
         String sql = "INSERT INTO `order` (login_name,linkman,address,phonenumber,amount,time,remark,status) VALUES ( ?, ?, ?, ?,?, ?,?,?)";
         Date date = new Date();
-        Order target = new Order(-1, "whlwhlwhl", "文海龙", "南宁", 1010, 20.00, date, "无", 1);
+        Order target = new Order(-1, "whlwhlwhl", "文海龙", "南宁", "1010", 20.00, date, "无", 1);
         int i = addTarget(con, sql, target);
     }
 

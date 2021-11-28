@@ -1,11 +1,17 @@
 package wen.service;
 
+import pan.pojo.Goods;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.Transaction;
-import wen.utils.JedisPollUtil;
+import wen.dao.goodsDao;
+import wen.utils.JDBCUtil;
+import wen.utils.JedisPoolUtil;
 import wen.utils.KillTimeUtil;
 
+import java.lang.reflect.InvocationTargetException;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -19,13 +25,13 @@ public class SKillService {
     public static String doSKill(String uid, String gid) {
         Date now = new Date();
         Date killTime = KillTimeUtil.getKillTime();
-        if (killTime==null||!now.after(killTime)) {
+        if (killTime == null || !now.after(killTime)) {
             return "还没到秒杀时间,请等待!";
         }
         if (uid.isEmpty() || gid.isEmpty()) {
             return "请求值不正确";
         }
-        JedisPool jedisPool = JedisPollUtil.getJedisPool();
+        JedisPool jedisPool = JedisPoolUtil.getJedisPool();
         Jedis jedis = jedisPool.getResource();
         String GKey = "ks:" + gid + ":goods";
         String UKey = "ks:" + gid + ":user";
@@ -66,37 +72,55 @@ public class SKillService {
     /**
      * 设置秒杀任务
      */
-    public static String setKill(String gid, String killNum) {
+    public static String setKill(String gid, String killNum) throws SQLException, ClassNotFoundException, InvocationTargetException, NoSuchMethodException, IllegalAccessException, InstantiationException {
+        if (!checkHave(gid, killNum)) { //如果数据库没有则直接返回
+            return "数据库中没有改商品id或者库存不够,请检查数据库!!!";
+        }
         if (killNum.isEmpty() || gid.isEmpty()) {
             return "请求值不正确";
         }
         //1.判断是否有这个商品,并且库存是否足够
-        Jedis jedis = JedisPollUtil.getJedisPool().getResource();
+        Jedis jedis = JedisPoolUtil.getJedisPool().getResource();
         String GKey = "ks:" + gid + ":goods";
 
         jedis.set(GKey, killNum);
         jedis.sadd(skgKey, gid);
-        //System.out.println(GKey + " " + jedis.get(GKey));
         jedis.close();
         return "设置成功";
     }
 
-    public static List querySKGoods() {
-        ArrayList<Object> rs = new ArrayList<>();
-        Jedis jedis = JedisPollUtil.getJedisPool().getResource();
-        jedis.close();
-        Set<String> smembers = jedis.smembers(skgKey);
-        ArrayList<String> skGoodsID = new ArrayList<>(smembers);
-        for (String id : skGoodsID) {
-            rs.add(id);
+    private static boolean checkHave(String gid, String killNum) throws SQLException, ClassNotFoundException, InvocationTargetException, NoSuchMethodException, IllegalAccessException, InstantiationException {//数据库是否有该商品
+        goodsDao goodsDao = new goodsDao();
+        Connection con = JDBCUtil.getConnection();
+        String sql = "SELECT * FROM shop.goods WHERE id=? and pnum>=?;";
+        Object[] setSqls = {gid, killNum};
+        Object o = goodsDao.queryTarget(con, sql, Goods.class, setSqls);
+        if (o != null) {
+            return true;
         }
-        return rs;
+        return false;
+    }
+
+    public static List querySKGoods() throws SQLException, ClassNotFoundException, InvocationTargetException, NoSuchMethodException, IllegalAccessException, InstantiationException {
+        Connection conn = JDBCUtil.getConnection();
+        goodsDao goodsDao = new goodsDao();
+        ArrayList<Goods> goodses = new ArrayList<>();
+        Jedis jedis = JedisPoolUtil.getJedisPool().getResource();
+        Set<String> smembers = jedis.smembers(skgKey);
+        jedis.close();
+        ArrayList<String> skGoodsID = new ArrayList<>(smembers);
+        String sql = "SELECT * FROM shop.`goods` WHERE id=?";
+        for (String id : skGoodsID) {
+            Object[] setSqls = {id};
+            goodses.add((Goods) goodsDao.queryTarget(conn, sql, Goods.class, setSqls));
+        }
+        return goodses;
     }
 
     public static String clearRedis() {
         Jedis jedis = null;
         try {
-            jedis = JedisPollUtil.getJedisPool().getResource();
+            jedis = JedisPoolUtil.getJedisPool().getResource();
             jedis.flushDB();
             return "清空成功!!!";
         } catch (Exception e) {

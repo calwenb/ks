@@ -1,6 +1,5 @@
 package wen.pojo;
 
-import java.security.PrivateKey;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +11,7 @@ public class Order {
     private String login_name;
     private String linkman;
     private String address;
-    private int phonenumber;
+    private String phonenumber;
     private double amount;
     private Date time;
     private String remark;
@@ -22,7 +21,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(int id, String login_name, String linkman, String address, int phonenumber, double amount, Date time, String remark, int status) {
+    public Order(int id, String login_name, String linkman, String address, String phonenumber, double amount, Date time, String remark, int status) {
         this.id = id;
         this.login_name = login_name;
         this.linkman = linkman;
@@ -34,7 +33,7 @@ public class Order {
         this.status = status;
     }
 
-    public Order(int id, String login_name, String linkman, String address, int phonenumber, double amount, Date time, String remark, int status, List<OrderItem> orderItems) {
+    public Order(int id, String login_name, String linkman, String address, String phonenumber, double amount, Date time, String remark, int status, List<OrderItem> orderItems) {
         this.id = id;
         this.login_name = login_name;
         this.linkman = linkman;
@@ -46,8 +45,6 @@ public class Order {
         this.status = status;
         this.orderItems = orderItems;
     }
-
-
 
 
     public int getId() {
@@ -82,11 +79,11 @@ public class Order {
         this.address = address;
     }
 
-    public int getPhonenumber() {
+    public String getPhonenumber() {
         return phonenumber;
     }
 
-    public void setPhonenumber(int phonenumber) {
+    public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
 

@@ -18,11 +18,15 @@ public class SetSKillController extends HttpServlet {
         String goodsId = request.getParameter("goodsId");
         String killNum = request.getParameter("killNum");
         String killTime = request.getParameter("killTime");
-        String msg;
+        String msg = "null";
         if (killTime != null) { //设置秒杀时间开始
             msg = SKillService.SetSKillTime(killTime);
         } else {
-            msg = SKillService.setKill(goodsId, killNum);
+            try {
+                msg = SKillService.setKill(goodsId, killNum);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         response.getWriter().println(msg);
     }

@@ -8,8 +8,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * 单利模式 饿汉式
+ */
 public class DruidUtil {
-    static DataSource dataSource;
+    private static DataSource dataSource;
 
     static {
         try {
@@ -20,6 +23,9 @@ public class DruidUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private DruidUtil() {
     }
 
     public static Connection getConnection() throws SQLException {

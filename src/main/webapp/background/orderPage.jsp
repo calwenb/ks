@@ -94,7 +94,7 @@
                                            role="button" class="btn btn-default">编辑</a>
                                         <a href="${pageContext.request.contextPath}/delOrderController?orderId=${order.getId()}"
                                            role="button" class="btn btn-warning">删除</a>
-                                        <a href="${pageContext.request.contextPath}/SenMailController?orderLoginName=${order.getLogin_name()}"
+                                        <a href="${pageContext.request.contextPath}/SenMailController?orderLoginName=${order.getLogin_name()}&orderId=${order.getId()}"
                                            role="button" class="btn btn-default">发邮件</a>
                                     </td>
                                 </tr>

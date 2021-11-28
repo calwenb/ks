@@ -3,6 +3,7 @@ package wen.dao;
 
 
 import wen.utils.MysqlFieldUtil;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -73,6 +74,14 @@ public interface BaseDao {
         return target;
     }
 
+    /**
+     * 操作需要自增的表
+     *
+     * @param con
+     * @param sql
+     * @param target
+     * @return
+     */
     default int addTarget(Connection con, String sql, Object target) throws SQLException, IllegalArgumentException, IllegalAccessException {
         Class<? extends Object> targetClass = target.getClass();
         Field[] fields = targetClass.getDeclaredFields();
@@ -83,6 +92,28 @@ public interface BaseDao {
                 continue;
             pst.setObject(i, fields[i].get(target));
         }
+        return pst.executeUpdate();
+    }
+
+
+    /**
+     * 操作Id不自增
+     *
+     * @param con
+     * @param sql
+     * @param target
+     */
+    default int addTarget2(Connection con, String sql, Object target) throws SQLException, IllegalArgumentException, IllegalAccessException {
+        Class<? extends Object> targetClass = target.getClass();
+        Field[] fields = targetClass.getDeclaredFields();
+        PreparedStatement pst = con.prepareStatement(sql);
+        for (int i = 0; i < fields.length; i++) { //从零开始
+            fields[i].setAccessible(true);
+            if (fields[i].getType().equals(List.class) || fields[i].getType().equals(Map.class))
+                continue;
+            pst.setObject(i + 1, fields[i].get(target));
+        }
+
         return pst.executeUpdate();
     }
 

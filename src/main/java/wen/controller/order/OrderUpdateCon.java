@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
 
 @WebServlet("/OrderUpdateCon")
 public class OrderUpdateCon extends HttpServlet {
@@ -19,7 +18,7 @@ public class OrderUpdateCon extends HttpServlet {
         int orderId = Integer.parseInt(request.getParameter("orderId"));
         Order order = null;
         try {
-             order = OrderService.queryAllOrderById(orderId);
+             order = OrderService.queryOrderById(orderId);
         } catch (Exception e) {
             e.printStackTrace();
         }

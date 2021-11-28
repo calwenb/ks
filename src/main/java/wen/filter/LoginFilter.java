@@ -19,9 +19,9 @@ import java.io.IOException;
 @WebFilter(filterName = "LoginFilter", urlPatterns = {"/*"})
 public class LoginFilter implements Filter {
     //不拦截的 URL
-    String[] noFilURLs = {"/index.jsp", "/login.jsp", "/register.jsp", "/LoginController", "/OutLoginController",
-            "/GoKillController", "/info", "/sKillController"};
-    String[] statics = {".css", ".js", ".png", ".ttf", ".woff", ".ico"};
+    String[] noFilURLs = {"/index.jsp", "/login.jsp", "/register.jsp", "/registerController", "/LoginController",
+            "/info", "/queryGoodsServlet"};
+    String[] statics = {".css", ".js", ".jpg", ".png", ".ttf", ".woff", ".ico"};
 
     public void init(FilterConfig config) {
     }

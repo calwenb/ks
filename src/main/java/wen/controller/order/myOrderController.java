@@ -20,6 +20,7 @@ public class myOrderController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User loginUser = (User) session.getAttribute("LOGIN_USER");
+        String loginName = loginUser.getLoginName();
         if (loginUser == null) {
             response.sendRedirect("login.jsp");
         }
@@ -48,15 +49,16 @@ public class myOrderController extends HttpServlet {
                     orders = OrderService.queryLike(queryText, false, preNum);
                 }
             } else {
-                orders = OrderService.queryAllOrders(preNum);
+                orders = OrderService.queryAllMyOrders(preNum, loginName);
             }
-            String loginName = loginUser.getLoginName();
+
             LinkedList<Order> myOrders = new LinkedList<>();
             for (Order order : orders) {
                 if (order.getLogin_name().equals(loginName)) {
                     myOrders.add(order);
                 }
             }
+            System.out.println(myOrders);
             request.setAttribute("orders", myOrders);
             request.setAttribute("preNum", preNum);
             request.getRequestDispatcher("/myOrderPage.jsp").forward(request, response);

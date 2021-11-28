@@ -1,6 +1,5 @@
 package wen.dao;
 
-import wen.pojo.Order;
 import wen.pojo.OrderItem;
 
 import java.sql.Connection;
@@ -15,6 +14,18 @@ public class OrderItemDao implements BaseDao {
         return BaseDao.super.addTarget(con, sql, target);
     }
 
+    /**
+     * 操作没有Id不自增的表
+     *
+     * @param con
+     * @param sql
+     * @param target
+     */
+    @Override
+    public int addTarget2(Connection con, String sql, Object target) throws SQLException, IllegalArgumentException, IllegalAccessException {
+        return BaseDao.super.addTarget2(con, sql, target);
+    }
+
     @Override
     public int updateTarget(Connection con, String sql, Object[] setSqls) throws SQLException {
         return BaseDao.super.updateTarget(con, sql, setSqls);
@@ -22,7 +33,6 @@ public class OrderItemDao implements BaseDao {
 
     public static ArrayList<OrderItem> queryAllOrderItem(Connection con) throws SQLException {
         ArrayList<OrderItem> orderItems = new ArrayList<>();
-
         return orderItems;
     }
 

@@ -25,26 +25,19 @@ public class SKillController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.print  StackTrace();
-        }*/
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("LOGIN_USER");
-        if (user == null) {
-            response.getWriter().println("还未登录,请登录!");
-        } else {
-            String loginName = user.getLoginName();
-            String goodId = request.getParameter("goodId");
-            String msg = SKillService.doSKill(loginName, goodId);
-            if (msg.indexOf("成功") != -1) {
-                System.out.println("加入购物车");
-            }
-            //System.out.println("user:" + loginName + msg);
-            response.getWriter().println("user:" + loginName + msg);
+        String loginName = user.getLoginName();
+        String goodId = request.getParameter("goodId");
+        String msg = SKillService.doSKill(loginName, goodId);
+        if (msg.indexOf("成功") != -1) {
+            //加入购物车
+            request.setAttribute("id", goodId);
+            request.setAttribute("kill", "isKill");
+            request.getRequestDispatcher("CartAdd?id=" + goodId).forward(request, response);
         }
 
+        response.getWriter().println("用户:" + loginName + msg);
     }
 
     @Override
