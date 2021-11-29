@@ -31,6 +31,7 @@
     </ul>
     <div id="submit">
         <input type="submit" value="修改">
+        <a href="queryGoodsServlet">返回</a>
 
     </div>
 </form>

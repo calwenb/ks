@@ -18,8 +18,7 @@
             <!-- 路径导航 -->
             <div class="panel-heading">
                 <ol class="breadcrumb">
-                    <li><a href="${pageContext.request.contextPath}/OrderQueryController">订单首页</a></li>
-                    <li>订单查询</li>
+                    <li>商品信息查询</li>
                 </ol>
             </div>
             <%--在这里写内容--%>

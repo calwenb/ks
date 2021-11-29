@@ -102,7 +102,6 @@ public class addGoodsServlet extends HttpServlet {
                         if (fieldName.equals("name")) {
                             //输出表单字段的值
                             name = item.getString("UTF-8");
-                            System.out.println("name   " + name);
                         }
                         if (fieldName.equals("price")) {
                             price = Double.parseDouble(item.getString("UTF-8"));
@@ -125,9 +124,7 @@ public class addGoodsServlet extends HttpServlet {
                         String filePath = uploadPath + File.separator + fileName;
                         File storeFile = new File(filePath);
                         imgurl = UPLOAD_DIRECTORY + '/' + fileName;
-                        System.out.println(imgurl);
                         // 在控制台输出文件的上传路径
-                        System.out.println(filePath);
                         // 保存文件到硬盘
                         item.write(storeFile);
                         request.setAttribute("message",
@@ -166,7 +163,7 @@ public class addGoodsServlet extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        request.getRequestDispatcher("goodsshow.jsp").forward(request, response);
+        request.getRequestDispatcher("queryGoodsServlet").forward(request, response);
     }
 
 
