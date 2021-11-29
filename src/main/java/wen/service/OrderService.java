@@ -100,9 +100,9 @@ public class OrderService {
                 setSqls = new Object[]{cart.getpId()};
                 Goods goods = (Goods) goodsDao.queryTarget(conn, sql, Goods.class, setSqls);
                 int pnum = goods.getPnum();
-                System.out.println(pnum + " " + cart.getBuyNum());
+                //System.out.println(pnum + " " + cart.getBuyNum());
                 if (pnum < cart.getBuyNum()) {//库存不够
-                    System.out.println("库存不够");
+                    //System.out.println("库存不够");
                     conn.rollback();
                     conn.close();
                     return 0;

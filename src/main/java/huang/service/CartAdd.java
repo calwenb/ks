@@ -86,7 +86,6 @@ public class CartAdd extends HttpServlet {
             sql = "insert INTO `cart`  VALUES (null, ?, ?, ?,?, ?,?)";
             try {
                 int i = cartDao.addTarget(con, sql, o);
-                System.out.println(i);
             } catch (SQLException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {
@@ -97,7 +96,6 @@ public class CartAdd extends HttpServlet {
             sql = "insert INTO `cart`  VALUES (null, ?, ?, ?,?, ?,?)";
             try {
                 int i = cartDao.addTarget(con, sql, cart);
-                System.out.println(i);
             } catch (SQLException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {

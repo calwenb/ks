@@ -16,7 +16,6 @@ public class JedisPoolUtil {
 
     private JedisPoolUtil() {
     }
-
     /*static {
         InputStream is = JedisPool.class.getClassLoader().getResourceAsStream("jedis.properties");
         Properties pro = new Properties();

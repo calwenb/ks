@@ -40,7 +40,6 @@ public class showCart extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(objects.toString());
         ArrayList<Cart> carts = new ArrayList<>();
         ArrayList<String> imgurls = new ArrayList<>();
         for (Object object : objects) {

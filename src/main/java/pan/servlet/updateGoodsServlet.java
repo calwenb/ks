@@ -18,7 +18,6 @@ public class updateGoodsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         String name = request.getParameter("name");
-        System.out.println(request.getParameter("price"));
         double price = Double.parseDouble(request.getParameter("price"));
         String category = request.getParameter("category");
         int pnum = Integer.parseInt(request.getParameter("num"));

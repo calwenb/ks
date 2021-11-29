@@ -58,7 +58,6 @@ public class myOrderController extends HttpServlet {
                     myOrders.add(order);
                 }
             }
-            System.out.println(myOrders);
             request.setAttribute("orders", myOrders);
             request.setAttribute("preNum", preNum);
             request.getRequestDispatcher("/myOrderPage.jsp").forward(request, response);
