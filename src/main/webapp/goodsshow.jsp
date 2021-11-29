@@ -40,7 +40,7 @@
                             <th>商品价格</th>
                             <th>商品种类</th>
                             <th>库存</th>
-                            <th>图片地址</th>
+                            <th>商品图片</th>
                             <th>商品描述</th>
                             <th>尺码</th>
                             <th>操作</th>
@@ -53,7 +53,7 @@
                                     <td>${goods.getPrice()}</td>
                                     <td>${goods.getCategory()}<br>
                                     <td>${goods.getPnum()}</td>
-                                    <td>${goods.getImgurl()}</td>
+                                    <td><img src="${goods.getImgurl()}" width="100px" height="100px"></td>
                                     <td>${goods.getDescription()}</td>
                                     <td>${goods.getSize()}</td>
                                     <td>
