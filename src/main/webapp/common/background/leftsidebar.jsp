@@ -19,8 +19,14 @@
             </a>
             <ul class="nav nav-pills nav-stacked" id="collapse_dept">
                 <li role="presentation"><a href="${pageContext.request.contextPath}/OrderQueryController">订单信息</a></li>
-                <li role="presentation"><a href="${pageContext.request.contextPath}/background/set_kill.jsp">秒杀开启</a></li>
+                <li role="presentation"><a href="${pageContext.request.contextPath}/background/set_kill.jsp">秒杀开启</a>
+                </li>
                 <li role="presentation"><a href="${pageContext.request.contextPath}/background/orderCount.jsp">订单统计</a>
+                </li>
+            </ul>
+            <ul class="nav nav-pills nav-stacked" id="collapse_dept">
+
+                <li role="presentation"><a href="${pageContext.request.contextPath}/indexs.jsp">聊天</a>
                 </li>
             </ul>
         </li>

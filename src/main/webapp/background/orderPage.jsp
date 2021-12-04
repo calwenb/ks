@@ -52,7 +52,7 @@
                             <th>商品信息</th>
                             <th>账号名</th>
                             <th>联系人</th>
-                            <th>通讯地址</th>
+                            <th width="100px">通讯地址</th>
                             <th>总金额</th>
                             <th>下单时间</th>
                             <th>备注</th>

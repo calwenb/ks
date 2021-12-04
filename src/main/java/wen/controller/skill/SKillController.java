@@ -30,7 +30,7 @@ public class SKillController extends HttpServlet {
         String loginName = user.getLoginName();
         String goodId = request.getParameter("goodId");
         String msg = SKillService.doSKill(loginName, goodId);
-        if (msg.indexOf("成功") != -1) {
+        if (msg.contains("成功")) {
             //加入购物车
             request.setAttribute("id", goodId);
             request.setAttribute("kill", "isKill");

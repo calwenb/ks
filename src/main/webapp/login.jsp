@@ -44,41 +44,7 @@
         </form>
     </div>
 </div>
-<!-- <footer class="w">
-    <div class="mod_copyright">
-        <div class="links">
-            <ul>
-                <li><a href="#">关于我们</a></li>
-                <li>|</li>
-                <li><a href="#">联系我们</a></li>
-                <li>|</li>
-                <li><a href="#">联系客服</a></li>
-                <li>|</li>
-                <li><a href="#">商家入驻</a></li>
-                <li>|</li>
-                <li><a href="#">营销中心</a></li>
-                <li>|</li>
-                <li><a href="#">手机品优购</a></li>
-                <li>|</li>
-                <li><a href="#">友情链接</a></li>
-                <li>|</li>
-                <li><a href="#">销售联盟</a></li>
-                <li>|</li>
-                <li><a href="#">品优购社区</a></li>
-                <li>|</li>
-                <li><a href="#">品优购公益</a></li>
-                <li>|</li>
-                <li><a href="#">English Site</a></li>
-                <li>|</li>
-                <li><a href="#">Contact U</a></li>
-            </ul>
-        </div>
-        <div class="copyright">
-            地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096 电话：400-618-4000 传真：010-82935100 邮箱: zhanghj+itcast.cn
-            <br>京ICP备08001421号京公网安备110108007702
-        </div>
-    </div>
-</footer> -->
+
 </body>
 
 </html>

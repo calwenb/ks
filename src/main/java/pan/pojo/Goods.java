@@ -10,6 +10,7 @@ public class Goods {
     String description;
     String size;
 
+
     public Goods(int id, String name, double price, String category, int pnum, String imgurl, String description, String size) {
         this.id = id;
         this.name = name;

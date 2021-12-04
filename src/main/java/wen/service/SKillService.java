@@ -58,10 +58,7 @@ public class SKillService {
             transaction.decr(GKey);
             transaction.sadd(UKey, uid);
             rs = transaction.exec();
-            /*if ((rs == null || rs.size() == 0)){
-                System.out.println("执行事务失败,开始自旋");
-                System.out.println("第"+(++count));
-            }*/
+
         } while (rs == null || rs.size() == 0);
         //事务失败后,自旋
         //System.out.println("还有库存:" + jedis.get(GKey));

@@ -48,6 +48,8 @@
         </div>
         <div class="fr">
             <ul>
+                <li><a href="indexs.jsp">客服</a></li>
+                <li></li>
                 <li><a href="myOrderController">我的订单</a></li>
                 <li></li>
                 <%
@@ -90,7 +92,8 @@
                 <li><a href="queryGoodsServlet?category=衬衫">衬衫</a></li>
                 <li><a href="queryGoodsServlet?category=裤子">裤子</a></li>
                 <li><a href="queryGoodsServlet?category=外套">外套</a></li>
-                <li><a href="${pageContext.request.contextPath}/GoKillController">品优秒杀</a></li>
+                <li><a href="${pageContext.request.contextPath}/GoKillController" title="优品秒杀"><img
+                        src="${pageContext.request.contextPath}/images/seckill.png"></a></li>
                 <br>
             </ul>
         </div>

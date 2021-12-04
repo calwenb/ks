@@ -109,8 +109,9 @@ public class OrderService {
                 }
                 //库存减一
                 sql = "UPDATE shop.`goods`  SET `goods`.pnum=? WHERE `goods`.id=?";
-                setSqls = new Object[]{goods.getPnum() - 1, goods.getId()};
+                setSqls = new Object[]{goods.getPnum() - cart.getBuyNum(), goods.getId()};
                 goodsDao.updateTarget(conn, sql, setSqls);
+
                 //将购物车的商品加入订单详细表
                 sql = "INSERT INTO `order_item` VALUES (?,?,?,?)";
                 OrderItem orderItem = new OrderItem(orderId, cart.getGoodsName(), goods.getSize(), cart.getBuyNum());

@@ -54,13 +54,13 @@ header {
   height: 106px;
 }
 header .logo a {
-  position: absolute;
-  top: 26px;
-  left: 0;
-  width: 171px;
-  height: 61px;
-  background: url(../images/logo.png) no-repeat;
-  font-size: 0;
+    position: absolute;
+    top: 26px;
+    left: 0;
+    width: 171px;
+    height: 61px;
+    background: url(../images/logo２.png) no-repeat;
+    font-size: 0;
 }
 header .search {
   position: absolute;

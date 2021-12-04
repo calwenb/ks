@@ -25,7 +25,6 @@ public class SenMailController extends HttpServlet {
             e.printStackTrace();
         }
         try {
-
             OrderService.sendMail(orderId, user.getEmail());
         } catch (Exception e1) {
             e1.printStackTrace();

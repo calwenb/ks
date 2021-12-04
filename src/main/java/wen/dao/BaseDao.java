@@ -46,6 +46,7 @@ public interface BaseDao {
             Object target = ClassCon.newInstance(fieldsVal);
             AllTargets.add(target);
         }
+
         return AllTargets;
     }
 
@@ -75,7 +76,7 @@ public interface BaseDao {
     }
 
     /**
-     * 操作需要自增的表
+     * 操作需要自增的表,基于反射
      *
      * @param con
      * @param sql

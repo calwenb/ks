@@ -10,7 +10,7 @@
 
 <!-- 中间部分（包括左边栏和订单/订单表单显示部分） -->
 <div style="position:relative; top:-15px;">
-
+    当前时间:<span id="now_time">0000-00-00 00:00:00</span>
     <!-- 左侧栏 -->
     <%@ include file="common/background/leftsidebar.jsp" %>
     <div class="emp_info col-sm-10">
@@ -73,6 +73,13 @@
         </div>
     </div>
 </div>
-
+<script>
+    $(function () {
+        window.setInterval(
+            "$('#now_time').load('info',{})",
+            500
+        )
+    })
+</script>
 </body>
 </html>

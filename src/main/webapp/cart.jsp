@@ -28,6 +28,7 @@
 <%@ include file="/common/index_head.jsp" %>
 
 <div class="c-container">
+    当前时间:<span id="now_time">0000-00-00 00:00:00</span>
     <div class="w">
         <h3>${requestScope.msg}</h3>
         <div class="cart-filter-bar">
@@ -75,6 +76,14 @@
                 <a href="order.jsp">去结算</a>|
                 <a href="index.jsp"> 继续购买</a>
             </div>
+            <script>
+                $(function () {
+                    window.setInterval(
+                        "$('#now_time').load('info',{})",
+                        500
+                    )
+                })
+            </script>
 </body>
 
 </html>
