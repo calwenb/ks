@@ -6,7 +6,9 @@ import pan.dao.GoodsDao;
 import pan.pojo.Goods;
 import wen.pojo.User;
 import wen.utils.JDBCUtil;
+import wen.utils.MailUtil;
 
+import javax.mail.MessagingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -102,7 +105,14 @@ public class CartAdd extends HttpServlet {
                 e.printStackTrace();
             }
         }
-
+        String email = user.getEmail();
+        try {
+            MailUtil.sendMail(email, "zhu", "add购物车", "add成功");
+        } catch (GeneralSecurityException e) {
+            e.printStackTrace();
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
         try {
             con.close();
         } catch (SQLException throwables) {

@@ -64,7 +64,6 @@ public class myOrderController extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     @Override

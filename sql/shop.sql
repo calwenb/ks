@@ -11,7 +11,7 @@
  Target Server Version : 80024
  File Encoding         : 65001
 
- Date: 28/11/2021 23:38:52
+ Date: 07/12/2021 15:18:42
 */
 
 SET NAMES utf8mb4;
@@ -32,7 +32,7 @@ CREATE TABLE `cart`
     `u_id`       int                                                          NOT NULL COMMENT '用户id',
     PRIMARY KEY (`cart_id`) USING BTREE
 ) ENGINE = InnoDB
-  AUTO_INCREMENT = 66
+  AUTO_INCREMENT = 158
   CHARACTER SET = utf8mb4
   COLLATE = utf8mb4_0900_ai_ci
   ROW_FORMAT = Dynamic;
@@ -41,15 +41,35 @@ CREATE TABLE `cart`
 -- Records of cart
 -- ----------------------------
 INSERT INTO `cart`
-VALUES (125, 'g2000t恤1', 29.9, 1, 995, 17, 3);
-INSERT INTO `cart`
-VALUES (128, 'g2000t恤2', 29.9, 1, 996, 18, 3);
-INSERT INTO `cart`
-VALUES (129, 'g2000t恤3', 39.9, 3, 0, 19, 3);
-INSERT INTO `cart`
-VALUES (130, 'g2000t恤4', 39, 1, 996, 20, 3);
-INSERT INTO `cart`
-VALUES (131, 'g2000t恤5', 39.9, 1, 996, 21, 3);
+VALUES (157, '商务衬衫5', 59, 1, 999, 32, 3);
+
+-- ----------------------------
+-- Table structure for gif
+-- ----------------------------
+DROP TABLE IF EXISTS `gif`;
+CREATE TABLE `gif`
+(
+    `id`          int                                                           NOT NULL AUTO_INCREMENT,
+    `biaoqingbao` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+    PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB
+  AUTO_INCREMENT = 5
+  CHARACTER SET = utf8mb4
+  COLLATE = utf8mb4_0900_ai_ci
+  ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of gif
+-- ----------------------------
+INSERT INTO `gif`
+VALUES (2, 'images/gif/baioqingbao1.jpg');
+INSERT INTO `gif`
+VALUES (3,
+        'images/gif/src=http___file02.16sucai.com_d_file_2014_0829_b871e1addf5f8e96f3b390ece2b2da0d.jpg&refer=http___file02.16sucai.jpg');
+INSERT INTO `gif`
+VALUES (4, 'images/gif/baioqingbao1.jpg');
+INSERT INTO `gif`
+VALUES (5, 'images/gif/OIP-C1.jpg');
 
 -- ----------------------------
 -- Table structure for goods
@@ -78,17 +98,17 @@ CREATE TABLE `goods`
 INSERT INTO `goods`
 VALUES (15, '马克华菲卫衣2', 59.9, '卫衣', 998, 'images/goods/wy5.jpg', '非常不错的卫衣，适合情侣穿', 'l');
 INSERT INTO `goods`
-VALUES (16, 'g2000t恤', 29, 't恤', 995, 'images/goods/tx1.jpg', '非常不错的t恤', 'l');
+VALUES (16, 'g2000t恤', 29, 't恤', 993, 'images/goods/tx1.jpg', '非常不错的t恤', 'l');
 INSERT INTO `goods`
-VALUES (17, 'g2000t恤1', 29.9, 't恤', 995, 'images/goods/tx2.jpg', '很不错的t恤', 'l');
+VALUES (17, 'g2000t恤1', 29.9, 't恤', 992, 'images/goods/tx2.jpg', '很不错的t恤', 'l');
 INSERT INTO `goods`
-VALUES (18, 'g2000t恤2', 29.9, 't恤', 996, 'images/goods/tx3.jpg', '很不错的t恤,穿起来很有气质', 'l');
+VALUES (18, 'g2000t恤2', 29.9, 't恤', 993, 'images/goods/tx3.jpg', '很不错的t恤,穿起来很有气质', 'l');
 INSERT INTO `goods`
 VALUES (19, 'g2000t恤3', 39.9, 't恤', 0, 'images/goods/tx4.jpg', '非常不错的t恤', 'l');
 INSERT INTO `goods`
-VALUES (20, 'g2000t恤4', 39, 't恤', 996, 'images/goods/tx5.jpg', '很适合夏天穿', 'l');
+VALUES (20, 'g2000t恤4', 39, 't恤', 995, 'images/goods/tx5.jpg', '很适合夏天穿', 'l');
 INSERT INTO `goods`
-VALUES (21, 'g2000t恤5', 39.9, 't恤', 996, 'images/goods/tx6.jpg', '很适合冬天穿', 'l');
+VALUES (21, 'g2000t恤5', 39.9, 't恤', 995, 'images/goods/tx6.jpg', '很适合冬天穿', 'l');
 INSERT INTO `goods`
 VALUES (22, '马克卫衣', 59, '卫衣', 999, 'images/goods/wy1.jpg', '非常不错的卫衣，很保暖', 'l');
 INSERT INTO `goods`
@@ -112,7 +132,7 @@ VALUES (31, '商务衬衫4', 59, '衬衫', 998, 'images/goods/cs5.jpg', '非常�
 INSERT INTO `goods`
 VALUES (32, '商务衬衫5', 59, '衬衫', 999, 'images/goods/cs6.jpg', '非常不错的衬衫，显瘦', 'l');
 INSERT INTO `goods`
-VALUES (33, '休闲裤', 29, '裤子', 997, 'images/goods/kz1.jpg', '非常不错的裤子', 'l');
+VALUES (33, '休闲裤', 29, '裤子', 996, 'images/goods/kz1.jpg', '非常不错的裤子', 'l');
 INSERT INTO `goods`
 VALUES (34, '休闲裤1', 59, '裤子', 999, 'images/goods/kz2.jpg', '不错的裤子', 'l');
 INSERT INTO `goods`
@@ -151,7 +171,7 @@ CREATE TABLE `order`
     `status`      int                                                     NOT NULL DEFAULT 1 COMMENT '订单状态 0:无效订单,1:已经下单,2:已完成的订单',
     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB
-  AUTO_INCREMENT = 42
+  AUTO_INCREMENT = 99
   CHARACTER SET = utf8
   COLLATE = utf8_general_ci COMMENT = '订单表'
   ROW_FORMAT = DYNAMIC;
@@ -159,10 +179,6 @@ CREATE TABLE `order`
 -- ----------------------------
 -- Records of order
 -- ----------------------------
-INSERT INTO `order`
-VALUES (68, 'wen', '文海龙', '1', '1234', 87.90, '2021-11-28 18:04:56', '无', 1);
-INSERT INTO `order`
-VALUES (69, 'wen', '文海龙', '1', '1234', 87.90, '2021-11-28 18:05:19', '无', 1);
 INSERT INTO `order`
 VALUES (72, 'long', '文海龙', '1', '1234', 219.40, '2021-11-28 18:11:51', '无', 2);
 INSERT INTO `order`
@@ -187,6 +203,14 @@ INSERT INTO `order`
 VALUES (92, 'long', '文海龙', '广西南宁市兴宁区燕子岭路燕子岭住宅小区', '17607889421', 287.40, '2021-11-28 20:44:11', '无', 1);
 INSERT INTO `order`
 VALUES (94, 'ren', '文海龙', '广西南宁市兴宁区燕子岭路燕子岭住宅小区', '17607889421', 88.00, '2021-11-28 23:36:15', '无', 1);
+INSERT INTO `order`
+VALUES (95, 'long', '文海龙', '1', '1234', 138.70, '2021-12-02 21:43:08', '无', 1);
+INSERT INTO `order`
+VALUES (96, 'long', '文海龙', '1', 'wen', 29.00, '2021-12-06 17:17:43', '无', 2);
+INSERT INTO `order`
+VALUES (97, 'wenwenwen', '文海龙', '1', '1234', 88.80, '2021-12-06 18:40:45', '无', 1);
+INSERT INTO `order`
+VALUES (98, 'wenwen', '文海龙', '1', '1234', 88.80, '2021-12-06 18:58:12', '无', 2);
 
 -- ----------------------------
 -- Table structure for order_item
@@ -207,10 +231,6 @@ CREATE TABLE `order_item`
 -- ----------------------------
 -- Records of order_item
 -- ----------------------------
-INSERT INTO `order_item`
-VALUES (68, 'g2000t恤', 'l', 2);
-INSERT INTO `order_item`
-VALUES (69, 'g2000t恤', 'l', 2);
 INSERT INTO `order_item`
 VALUES (72, 'g2000t恤3', 'l', 4);
 INSERT INTO `order_item`
@@ -281,6 +301,28 @@ INSERT INTO `order_item`
 VALUES (94, '休闲裤', 'l', 1);
 INSERT INTO `order_item`
 VALUES (94, '商务衬衫4', 'l', 1);
+INSERT INTO `order_item`
+VALUES (95, 'g2000t恤1', 'l', 1);
+INSERT INTO `order_item`
+VALUES (95, 'g2000t恤2', 'l', 1);
+INSERT INTO `order_item`
+VALUES (95, 'g2000t恤4', 'l', 1);
+INSERT INTO `order_item`
+VALUES (95, 'g2000t恤5', 'l', 1);
+INSERT INTO `order_item`
+VALUES (96, '休闲裤', 'l', 1);
+INSERT INTO `order_item`
+VALUES (97, 'g2000t恤', 'l', 1);
+INSERT INTO `order_item`
+VALUES (97, 'g2000t恤1', 'l', 1);
+INSERT INTO `order_item`
+VALUES (97, 'g2000t恤2', 'l', 1);
+INSERT INTO `order_item`
+VALUES (98, 'g2000t恤', 'l', 1);
+INSERT INTO `order_item`
+VALUES (98, 'g2000t恤1', 'l', 1);
+INSERT INTO `order_item`
+VALUES (98, 'g2000t恤2', 'l', 1);
 
 -- ----------------------------
 -- Table structure for user
@@ -298,7 +340,7 @@ CREATE TABLE `user`
     PRIMARY KEY (`id`) USING BTREE,
     UNIQUE INDEX `login_name` (`login_name`) USING BTREE
 ) ENGINE = InnoDB
-  AUTO_INCREMENT = 34
+  AUTO_INCREMENT = 41
   CHARACTER SET = utf8
   COLLATE = utf8_general_ci COMMENT = '用户信息表'
   ROW_FORMAT = DYNAMIC;
@@ -309,13 +351,13 @@ CREATE TABLE `user`
 INSERT INTO `user`
 VALUES (1, 'wen', 'wen', '123', 0, '10086', '2280400645@qq.com');
 INSERT INTO `user`
-VALUES (3, 'whl', 'long', '123', 2, '10010', '2280400645@qq.com');
+VALUES (3, 'whl', 'long', '456', 2, '10010', '2280400645@qq.com');
 INSERT INTO `user`
 VALUES (15, '文海龙', 'whlwhlwhl', '999', 2, '2313', '2280400645@qq.com');
 INSERT INTO `user`
 VALUES (17, '文海龙', 'whlwhlwhlwhl', '123', 2, '123', '2280400645@qq.com');
 INSERT INTO `user`
-VALUES (23, '蒋', 'jiangj', '123', 1, '3213', '213200645@qq.com');
+VALUES (23, '蒋', 'jiangj', '123', 2, '3213', '213200645@qq.com');
 INSERT INTO `user`
 VALUES (25, '32131', 'jjj', '123', 1, '123', '12300645@qq.com');
 INSERT INTO `user`
@@ -330,5 +372,11 @@ INSERT INTO `user`
 VALUES (34, 'admin', 'admin', '123', 1, '3213', '2280400645@qq.com');
 INSERT INTO `user`
 VALUES (37, 'ren', 'ren', '123', 2, '17607889421', '2280400645@qq.com');
+INSERT INTO `user`
+VALUES (38, 'renren', 'renren', '123', 2, '123', '2280400645@qq.com');
+INSERT INTO `user`
+VALUES (39, '文海龙龙', 'wenwenwen', '123', 2, '12345678911', '2280400645@qq.com');
+INSERT INTO `user`
+VALUES (40, '文海龙', 'wenwen', '123', 2, '12345678911', '2280400645@qq.com');
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -19,7 +19,7 @@
 
 <body>
 <header class="w">
-    <a href="index.jsp"><img src="images/logo２.png" alt=""></a>
+    <a href="index.jsp"><img src="images/logo.png" alt=""></a>
 </header>
 <div class="registerarea w">
     <h3>注册新用户
@@ -40,16 +40,8 @@
                 <li><label for="tel">手机号：</label><input type="tel" name="phoneNumber" id="tel"></li>
             </ul>
             <ul>
-                <!-- <li><label for="text">短信验证码：</label><input type="text" name="" id="text"><button>点击发送</button></li> -->
                 <li><label for="password_01">登录密码：</label><input type="password" name="password" id="password_01"></li>
-                <%--<li class="safe">安全程度
-                    <em class="weak">弱</em>
-                    <em class="middle">中</em>
-                    <em class="strong">强</em>
-                </li>
 
-                <li><label for="password_02">确认密码：</label><input type="password" name="password" id="password_02"></li>--%>
-                <!-- <li class="agree"><input type="checkbox" name="" id="">同意协议并注册<a href="#">《知果果用户协议》</a></li> -->
                 <br>
 
                 <li><input type="submit" value="完成注册" class="btn"></li>

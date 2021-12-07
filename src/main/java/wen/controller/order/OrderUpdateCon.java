@@ -24,7 +24,6 @@ public class OrderUpdateCon extends HttpServlet {
         }
         request.setAttribute("order",order);
         request.getRequestDispatcher("/background/orderUpdate.jsp").forward(request, response);
-
     }
 
     @Override

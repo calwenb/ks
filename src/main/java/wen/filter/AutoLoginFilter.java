@@ -28,6 +28,10 @@ public class AutoLoginFilter implements Filter {
 
         if (req.getSession().getAttribute("LOGIN_USER") == null) {
             Cookie[] cookies = req.getCookies();
+            if (cookies == null) { //cookies有可能取不到
+                chain.doFilter(request, response);
+                return;
+            }
             for (Cookie cookie : cookies) {
                 if ("AUTO_LOGIN".equals(cookie.getName())) {
                     String loginName = cookie.getValue().split("-")[0];

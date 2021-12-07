@@ -1,5 +1,8 @@
 package wen.pojo;
 
+/**
+ * 订单商品详细 pojo
+ */
 public class OrderItem {
     private int orderId;//订单
     private String goodsName;

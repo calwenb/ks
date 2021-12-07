@@ -38,7 +38,7 @@ public class LoginController extends HttpServlet {
                 request.getSession().setAttribute("LOGIN_USER", user);
                 if ("on".equals(auto_login)) {
                     Cookie cookie = new Cookie("AUTO_LOGIN", loginName + "-" + password);
-                    cookie.setMaxAge(7 * 24 * 60 * 60);//七天
+                    cookie.setMaxAge(30 * 24 * 60 * 60);//过期时间设置一个月
                     cookie.setPath(request.getContextPath());
                     response.addCookie(cookie);
                 }

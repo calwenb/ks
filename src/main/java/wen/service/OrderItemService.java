@@ -7,10 +7,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class OrderItemService {
-   /* public static ArrayList<Order> queryAllOrders(int preNum) throws SQLException, ClassNotFoundException {
-        Connection con = JDBCUtil.getConnection();
-        return OrderDao.queryAllOrders(con,preNum);
-    }*/
+
     public static int delOrderItem(int orderId) throws SQLException, ClassNotFoundException {
         Connection con = JDBCUtil.getConnection();
         int i = OrderItemDao.delOrderItem(con, orderId);
